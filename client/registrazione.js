@@ -10,7 +10,7 @@ $(document).ready(function () {
     </form>
     
     <div class="container-fluid row">
-    <a href="./index.html" class="badge bg-info text-dark">Torna alla home</a></div>
+    <a href="./index.html" class="badge bg-info text-dark">Home</a></div>
     </div>`;
 
     //evento click bottone

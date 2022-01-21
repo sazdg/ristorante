@@ -2,12 +2,14 @@
 $(document).ready(function(){
 
     var home = `<div>
-    <div class="container-fluid row p-4" id="titolo">
+    <nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid row p-2" id="titolo">
     <h3 class="col-3">Sublime Restaurant</h3>
     <span class="col-6"></span>
-    <button type="button" class="col-1 btn btn-warning m-2 btn-sm" id="login">LOGIN</button>
-    <button type="button" class="col-1 btn btn-dark m-2 btn-sm" id="reg">Registrati</button>
+    <button type="button" class="col-1 btn btn-danger m-2 btn-sm" id="login">LOGIN</button>
+    <button type="button" class="col-1 btn btn-dark m-2 btn-sm" id="reg">SIGN IN</button>
     </div>
+    </nav>
 
     <!--CAROSELLO-->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -21,13 +23,13 @@ $(document).ready(function(){
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./img/food.jpg" class="d-block w-100" alt="">
+                    <img src="./img/food.png" class="d-block w-100" height="700" alt="">
                 </div>
                 <div class="carousel-item">
-                    <img src="./img/food2.jpg" class="d-block w-100" alt="">
+                    <img src="./img/food2.jpg" class="d-block w-100" height="700" alt="">
                 </div>
                 <div class="carousel-item">
-                    <img src="./img/food3.jpg" class="d-block w-100" alt="">
+                    <img src="./img/food3.jpg" class="d-block w-100" height="700" alt="">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -43,7 +45,11 @@ $(document).ready(function(){
         </div>
 
     <div class="container-fluid row">
-    <p>Sublime Restaurant is a cozy restaurant created by a husband and wife who wanted to build an eating establishment where everyone feels welcome and comfortable. Sublime Restaurant's website exhibits the restaurant's select food and drinks to give a glimpse at the distinguished, yet down - to - earth menu Sublime Restaurant serves its consumers.</p></div></div>`;
+    <div class="col-2"></div>
+    <p class="col-8 text-center pt-4 pb-4">Sublime Restaurant is a cozy restaurant created by a husband and wife who wanted to build an eating establishment where everyone feels welcome and comfortable. Sublime Restaurant's website exhibits the restaurant's select food and drinks to give a glimpse at the distinguished, yet down - to - earth menu Sublime Restaurant serves its consumers.</p>
+    <div class="col-2"></div>
+    </div>
+    </div>`;
 
     //home
     $("#app").html(home);

@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+
 body {
     background-color:lightskyblue;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+}
+
+h3 {
+    font-family: 'Sedgwick Ave', cursive;
+    font-size: 40px;
 }
 
 #carouselExampleIndicators {
-    width: 50%;
+    width: 100%;
     margin: auto;
 }
 
@@ -11,4 +20,8 @@ body {
     width: 7rem;
     padding: 10px;
     margin: 15px;
+}
+
+.btn {
+    font-weight: bold;
 }
