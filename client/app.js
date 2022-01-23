@@ -2,11 +2,15 @@
 $(document).ready(function(){
 
     var home = `<div>
-    <nav class="navbar navbar-dark bg-primary">
-    <div class="container-fluid row p-2" id="titolo">
+    <nav class="navbar navbar-dark bg-danger">
+    <div class="container-fluid row p-2 m-0" id="titolo">
     <h3 class="col-3">Sublime Restaurant</h3>
-    <span class="col-6"></span>
-    <button type="button" class="col-1 btn btn-danger m-2 btn-sm" id="login">LOGIN</button>
+    
+    <div class="col-6">
+        <a href="./index.html" class="badge bg-info text-dark">Home</a>
+    </div>
+
+    <button type="button" class="col-1 btn btn-dark m-2 btn-sm" id="login">LOGIN</button>
     <button type="button" class="col-1 btn btn-dark m-2 btn-sm" id="reg">SIGN IN</button>
     </div>
     </nav>
@@ -46,7 +50,7 @@ $(document).ready(function(){
 
     <div class="container-fluid row">
     <div class="col-2"></div>
-    <p class="col-8 text-center pt-4 pb-4">Sublime Restaurant is a cozy restaurant created by a husband and wife who wanted to build an eating establishment where everyone feels welcome and comfortable. Sublime Restaurant's website exhibits the restaurant's select food and drinks to give a glimpse at the distinguished, yet down - to - earth menu Sublime Restaurant serves its consumers.</p>
+    <p class="col-8 text-center pt-4 pb-4 fs-4">Sublime Restaurant is a cozy restaurant created by a husband and wife who wanted to build an eating establishment where everyone feels welcome and comfortable. Sublime Restaurant's website exhibits the restaurant's select food and drinks to give a glimpse at the distinguished, yet down - to - earth menu Sublime Restaurant serves its consumers.</p>
     <div class="col-2"></div>
     </div>
     </div>`;

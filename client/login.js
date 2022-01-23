@@ -1,15 +1,20 @@
 $(document).ready(function(){
 
-    var log = `<div><form>
-    <span>Username</span><br/>
+    var log = `<div class="container row m-auto">
+    <div class="container-fluid row p-5 text-center">
+    <form>
+    <p>Username</p>
     <input type="text" id="nome"><br/>
-    <span>Password</span><br/>
-    <input type="password" id="psw"><br/>
-    <input type="submit" value="Invia" id="invia">
+    <p>Password</p>
+    <input type="password" id="psw"><br/><br/>
+    <input type="submit" class="btn btn-primary" value="SUBMIT" id="invia">
     </form>
+    </div>
     
-    <div class="container-fluid row">
-    <a href="./index.html" class="badge bg-info text-dark">Home</a></div>
+    <div class="container-fluid row p-5">
+    <p class="text-center">I'm a new customer</p>
+    <button type="button" class="btn btn-dark m-auto reg-stile" id="reg">REGISTER</button>
+    </div>
     </div>`;
 
     //evento click bottone
@@ -34,7 +39,9 @@ $(document).ready(function(){
             data: datilogin
         })
         .done(function(response){
-            console.log("Ecco la risposta " + response);
+            console.log(response);
+//TO DO se le credenziali sono sbagliate inserire un messaggio di errore
+            showProducts();
         })
         .fail(function(xhr, resp, text){
             console.log("Errore " + text);
