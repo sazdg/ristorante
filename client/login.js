@@ -40,8 +40,7 @@ $(document).ready(function(){
         })
         .done(function(response){
             console.log(response);
-//TO DO se le credenziali sono sbagliate inserire un messaggio di errore
-            showProducts();
+            window.location.assign("index.html");
         })
         .fail(function(xhr, resp, text){
             console.log("Errore " + text);

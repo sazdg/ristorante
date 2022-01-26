@@ -41,5 +41,16 @@ class Products {
 
         return $risultato;
     }
+
+    public function readOne($i){
+        $query = "SELECT * FROM prodotti WHERE id = :i";
+
+        $risultato = $this->conn->prepare($query);
+
+        $risultato->bindParam(":i", $i);
+        $risultato->execute();
+
+        return $risultato;
+    }
 }
 ?>

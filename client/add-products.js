@@ -12,9 +12,10 @@ $(document).ready(function(){
         })
             .done(function (response) {
                 console.log(response)
+                //messaggio andato a buon fine
             })
             .fail(function (xhr, resp, text) {
-                console.log(xhr, resp, text);
+                console.log("errore add-products.js" + xhr, resp, text)
             });
         return false;
     });

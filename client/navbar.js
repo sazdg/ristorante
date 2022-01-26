@@ -6,6 +6,9 @@ $(document).ready(function(){
 
             <div class="col-7">
                 <button type="button" class="btn" id="home"><a href="./index.html"><img src="./img/icone/home.png" width="30"></a></button>
+
+                <!--funzione all'interno del bottone - attributo onclick-->
+                <button type="button" class="btn" id="menu" onclick="showProducts()"><img src="./img/icone/menu.png" width="35"></button>
             </div>
 
             <div class="col-2 d-flex justify-content-end">

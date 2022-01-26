@@ -12,4 +12,6 @@ $(document).ready(function(){
         $("#app").html(cart);
     });
 
+    //chiamata al carrello dell'utente - sessione
+
 });
