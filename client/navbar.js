@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    controlSession();
+
     var nav = `<nav class="navbar navbar-dark bg-danger">
         <div class="container-fluid row p-2 m-0" id="titolo">
             <h3 class="col-3">Sublime Restaurant</h3>
@@ -12,7 +14,7 @@ $(document).ready(function(){
             </div>
 
             <div class="col-2 d-flex justify-content-end">
-            <button type="button" class="btn" id="login"><img src="./img/icone/user.png" width="30"></button>
+            <button type="button" class="btn" id="login"><img src="./img/icone/user.png" width="30" id="prova"></button>
             <button type="button" class="btn" id="carrello"><img src="./img/icone/carrello.png" width="30"></button>
             </div>
         </div>
@@ -20,3 +22,24 @@ $(document).ready(function(){
 
     $("#nav").html(nav);
 });
+
+function controlSession(){
+    console.log("funzione control session attivata");
+    $.ajax({
+        url: "http://localhost/cime/ristorante/server/api/controllo.php",
+        type: "GET",
+        dataType: "json"
+    })
+    .done(function(response){
+        
+        if(response.esiste){
+            console.log(response.esiste + " = esiste sessione user");
+            $("#prova").attr("src", "./img/icone/exit.png");
+        } else {
+            console.log(response.esiste + " = non esiste sessione user");
+        }
+    })
+    .fail(function(xhr, resp, text){
+        console.log("errore navbar.js controllo sessione");
+    });
+};

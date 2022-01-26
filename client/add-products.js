@@ -11,8 +11,14 @@ $(document).ready(function(){
             dataType: "json"
         })
             .done(function (response) {
-                console.log(response)
-                //messaggio andato a buon fine
+
+                if(response.esiste){
+                    alert("Prodotto inserito nel carrello");
+                } else {
+                    alert("non sei registrato!");
+                    console.log("redirect a pagina login.js");
+                    faiLogin();
+                }
             })
             .fail(function (xhr, resp, text) {
                 console.log("errore add-products.js" + xhr, resp, text)

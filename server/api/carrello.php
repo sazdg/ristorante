@@ -15,7 +15,7 @@ if(isset($_SESSION["user"])){
     
     $scelta = $cibo->readOne($prodotto);
 
-    echo json_encode($scelta);
+    echo json_encode(array("messaggio" => $scelta, "esiste" => true));
     /*
     $riga = $scelta->fetch(PDO::FETCH_ASSOC);
     $riga["Prodotti"];//nome
@@ -26,7 +26,7 @@ if(isset($_SESSION["user"])){
 
 } else {
     //rimanda alla pagina di login
-    echo json_encode("erroreeee carrello.php");
+    echo json_encode(array("messaggio" => "Non sei registrato!", "esiste" => false));
 
 }
 

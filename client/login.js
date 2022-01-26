@@ -50,3 +50,25 @@ $(document).ready(function(){
         return false;
     });
 });
+
+function faiLogin(){
+    var log = `<div class="container row m-auto">
+    <div class="container-fluid row p-5 text-center">
+    <h4>Ops! Prima di continuare fai il login!</h4>
+    <form>
+    <p>Username</p>
+    <input type="text" id="nome"><br/>
+    <p>Password</p>
+    <input type="password" id="psw"><br/><br/>
+    <input type="submit" class="btn btn-primary" value="SUBMIT" id="invia">
+    </form>
+    </div>
+    
+    <div class="container-fluid row p-5">
+    <p class="text-center">I'm a new customer</p>
+    <button type="button" class="btn btn-dark m-auto reg-stile" id="reg">REGISTER</button>
+    </div>
+    </div>`;
+
+    $("#app").html(log);
+}
