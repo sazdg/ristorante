@@ -1,4 +1,5 @@
 <?php
+//lettura dei prodotti 
 
 require("../data/Database.php");
 $database = new Database();

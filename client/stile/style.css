@@ -42,3 +42,11 @@ input, .reg-stile {
     border: 1px solid #ced4da;
     border-radius: .25rem;
 }
+
+#corpo {
+    margin: 15rem 0rem;
+}
+
+#alertcarrello {
+    width: 50%;
+}

@@ -2,18 +2,6 @@
 $(document).ready(function(){
 
     var home = `<div>
-    <nav class="navbar navbar-dark bg-danger">
-    <div class="container-fluid row p-2 m-0" id="titolo">
-    <h3 class="col-3">Sublime Restaurant</h3>
-    
-    <div class="col-6">
-        <a href="./index.html" class="badge bg-info text-dark">Home</a>
-    </div>
-
-    <button type="button" class="col-1 btn btn-dark m-2 btn-sm" id="login">LOGIN</button>
-    <button type="button" class="col-1 btn btn-dark m-2 btn-sm" id="reg">SIGN IN</button>
-    </div>
-    </nav>
 
     <!--CAROSELLO-->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">

@@ -4,6 +4,7 @@ $(document).ready(function () {
 
 });
 
+//visualizzare tutti i prodotti nella pagina prodotti
 function showProducts() {
 
     $.ajax({
@@ -13,7 +14,9 @@ function showProducts() {
     })
         .done(function (response) {
 
-            var stampa = "<div class='container d-flex justify-content-around flex-wrap'>";
+            var stampa = `<div class='container-fluid row m-0' id='body-cards'>
+            <div class='col-2 p-2'></div>
+            <div class='container col-8 d-flex justify-content-around flex-wrap align-items-start p-5'>`;
 
             for(let i = 0; i < response.prodotti.length; i++){
                 var nome = response.prodotti[i].nome;
@@ -22,15 +25,15 @@ function showProducts() {
                 var id = response.prodotti[i].id;
                 var categoria = response.prodotti[i].categoria;
 
-                stampa += `<div class="col"><div class="card" style="width: 15rem;">
+                stampa += `<div class="col p-3"><div class="card" style="width: 14rem;">
                 <img src="./img/prodotti/` + immagini + `" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title">` + nome + `</h5>
-                    <button type="button" class="btn btn-primary" id="add">Aggiungi al carrello</button></div>
+                    <button type="button" class="btn btn-primary" id="add" data-id="` + id + `">Aggiungi al carrello</button></div>
                 </div></div>`;
             }
             
-            stampa += "</div>";
+            stampa += "</div><div class='col-2 p-2'></div></div>";
             
             $("#app").html(stampa);
         })
