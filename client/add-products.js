@@ -11,13 +11,11 @@ $(document).ready(function(){
             dataType: "json"
         })
             .done(function (response) {
-
                 if(response.esiste){
-                    alert("Prodotto inserito nel carrello");
+                    console.log("Prodotto " + response.messaggio + " aggiunto con successo al carrello");
                 } else {
-                    alert("non sei registrato!");
-                    console.log("redirect a pagina login.js");
-                    faiLogin();
+                    console.log("Non sei registrato!");
+                    showLogin();
                 }
             })
             .fail(function (xhr, resp, text) {

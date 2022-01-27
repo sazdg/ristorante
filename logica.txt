@@ -1,0 +1,45 @@
+SESSIONE:
+
+carrello.php
+>
+controllare che sia aperta la sessione 
+controllare che esista la variabile "user" nella sessione
+    se TRUE 
+connettersi al db 
+creare istanza di prodotto
+invocare il metodo del prodotto (readOne)
+        se esiste (prodotto = 1)
+    inserire il prodotto in una variabile "carrello" nella sessione
+        se NON esiste (prodotto = 0)
+    ritornare messaggio "nessun prodotto trovato)
+    //questo è improbabile che succeda, si potrebbe anche omettere
+
+    se FALSE variabile "user"
+ritornare messaggio false
+
+
+controllo.php
+>
+controllare che sia aperta la sessione
+    se esiste la variabile di sessione 
+ritornare messaggio true 
+    se non esiste
+ritornare messaggio false 
+
+navbar.js
+>
+appena caricata, la navbar controlla invoca una funzione chiamata controlSession()
+la funzione fa una chiamata ajax a controllo.php
+    se la variabile "user" nella sessione esiste già
+cambiare l'icona del login con logout
+    se NON esiste 
+lasciare la navbar così
+
+add-products.js
+>
+la chiamata ajax chiede a carrello.php di aggiungere un prodotto nel carrello
+in base al json che ritorna il file php agiamo in modo diverso
+    se c'è la sessione
+messaggino con azione avvenuta con successo
+    se NON c'è la sessione 
+messaggio errore + redirect alla pagina di login.js

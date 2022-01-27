@@ -24,7 +24,10 @@ if($conta == 0){
     } else {
         session_start();
         $_SESSION["user"] = $datilogin->user;
-        echo json_encode("Benvenuta");
+        $_SESSION["carrello"] = array();
+        $_SESSION["prezzo"] = array();
+
+        echo json_encode("Benvenut* " . $_SESSION["user"]);
     }
 
 }

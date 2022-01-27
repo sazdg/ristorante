@@ -15,14 +15,20 @@ if(isset($_SESSION["user"])){
     
     $scelta = $cibo->readOne($prodotto);
 
-    echo json_encode(array("messaggio" => $scelta, "esiste" => true));
-    /*
-    $riga = $scelta->fetch(PDO::FETCH_ASSOC);
-    $riga["Prodotti"];//nome
-    $riga["Prezzo"];//prezzo
+    if($ris = $scelta->rowCount() > 0){
 
-    echo json_encode($riga["Prodotti"]);
-    */
+        $riga = $scelta->fetch(PDO::FETCH_ASSOC);
+        $nomeProdotto = $riga["Prodotti"];//nome
+        $prezzoProdotto = $riga["Prezzo"];//prezzo
+        
+        array_push($_SESSION["carrello"], $nomeProdotto);
+        array_push($_SESSION["prezzo"], $prezzoProdotto);
+
+        echo json_encode(array("messaggio" => $nomeProdotto, "esiste" => true));
+
+    } else {
+        echo json_encode(array("messaggio" => "prodotto non trovato", "esiste" => true));
+    }
 
 } else {
     //rimanda alla pagina di login
