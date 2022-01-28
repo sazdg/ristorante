@@ -22,7 +22,7 @@ $risultato->bindParam(":email", $datiregistrazione->email);
 
 $risultato->execute();
 
-
+//TO DO controlli if per gli errori degli input e nomi doppi
 if($risultato){
     //TO DO aprire la sessione
     echo json_encode("ha funzionato = " . $datiregistrazione->nome . " " . $datiregistrazione->password . " " . $datiregistrazione->email);

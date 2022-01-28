@@ -18,11 +18,22 @@ $(document).ready(function(){
             dataType: "json"
         })
             .done(function (response) {
-                var tabella = `<table class="table table-hover">
+                var tabella = `<div><h4><strong>Ecco il tuo carrello</strong></h4><table class="table table-hover">
                 <tr>
-                <td>Nome</td><td>Prezzo</td>
-                </tr>
-                </table>`;
+                <th>Nome</th><th>Prezzo</th><th></th>
+                </tr>`;
+
+                for(var i = 0; i < response.nome.length; i++){
+                    tabella += `<tr><td>` + response.nome[i] + `</td><td>` + response.prezzo[i] + `</td>
+                    <td>
+                    <button type="button" class="btn" id="cestino" data-nome="` + response.nome[i] + `"><img src="./img/icone/cestino.png" width="20"></button>
+                    </td></tr>`;
+                }
+
+                tabella += "</table><h5>Totale </h5></div>";
+                $("#corpo").css("margin", "6rem 0rem");
+                $("#corpo").html(tabella);
+                
                 console.log(response);
             })
             .fail(function (xhr, resp, text) {

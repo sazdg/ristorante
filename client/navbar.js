@@ -35,13 +35,30 @@ function controlSession(){
     .done(function(response){
         
         if(response.esiste){
+
             console.log(response.esiste + " = esiste sessione user");
 
-            $("#username").html(response.username);
-            $("#login").removeAttr("onclick");
-            var logout = "<a href='../server/api/logout.php'><img src='./img/icone/exit.png' width='30' id='exit'></a>";
-            $("#login").html(logout);
+            if(response.username == "Sara" || response.username == "Isabella"){
+                $("#username").html("ADMIN");
+                //ICONA LOGOUT
+                $("#login").removeAttr("onclick");
+                var logout = "<a href='../server/api/logout.php'><img src='./img/icone/exit.png' width='30' id='exit'></a>";
+                $("#login").html(logout);
+                //ICONTA IMPOSTAZIONI
+                $("#carrello").attr("id","admin");
+                var admin = "<img src='./img/icone/admin.png' width='30'>";
+                $("#admin").html(admin);
 
+            } else {
+                //TIPO UTENTE: CLIENTE
+                $("#username").html(response.username);
+                //ICONA LOGOUT
+                $("#login").removeAttr("onclick");
+                var logout = "<a href='../server/api/logout.php'><img src='./img/icone/exit.png' width='30' id='exit'></a>";
+                $("#login").html(logout);
+
+            }
+            
         } else {
             console.log(response.esiste + " = non esiste sessione user");
         }
