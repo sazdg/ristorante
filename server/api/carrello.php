@@ -17,14 +17,25 @@ if(isset($_SESSION["user"])){
 
     if($ris = $scelta->rowCount() > 0){
 
+        //FETCH DATA
         $riga = $scelta->fetch(PDO::FETCH_ASSOC);
         $nomeProdotto = $riga["Prodotti"];//nome
         $prezzoProdotto = $riga["Prezzo"];//prezzo
         
+        //AGGIUNGERE PRODOTTI NELLA SESSIONE
         array_push($_SESSION["carrello"], $nomeProdotto);
         array_push($_SESSION["prezzo"], $prezzoProdotto);
 
-        echo json_encode(array("messaggio" => $nomeProdotto, "esiste" => true));
+        //CALCOLARE TOTALE PREZZO
+        $len = sizeof($_SESSION["prezzo"]);
+        $_SESSION["totale"] = 0;
+
+        for($i = 0; $i < $len; $i++){
+            $_SESSION["totale"] = $_SESSION["totale"] + $_SESSION["prezzo"][$i];
+        }
+
+        //end
+        echo json_encode(array("messaggio" => $nomeProdotto, "esiste" => true, "totale" => $_SESSION["totale"]));
 
     } else {
         echo json_encode(array("messaggio" => "prodotto non trovato", "esiste" => true));

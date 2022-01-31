@@ -1,5 +1,35 @@
 $(document).ready(function(){
 
+    $(document).on("click", "#carrello", function() {
+        showCarrello();
+    });
+
+    $(document).on("click","#cestino", function(){
+
+        var prodotto = $(this).attr("data-nome");
+
+        $.ajax({
+            url:"http://localhost/cime/ristorante/server/api/cancellacarrello.php?canc=" + prodotto,
+            type:"GET",
+            dataType:"json"
+        })
+        .done(function(response){
+            console.log("click cestino prodotto: " + response);
+            confirm(prodotto + " eliminato con successo dal carrello");
+            showCarrello();
+
+        })
+        .fail(function(xhr, resp, text){
+            console.log(xhr, resp, text);
+        });
+
+    });
+
+
+});
+
+function showCarrello(){
+
     var cart = `<div class="container-fluid row m-0">
     <div class="col-2"></div>
     <div class="col-8 text-center d-flex justify-content-center p-4" id="corpo">
@@ -7,9 +37,8 @@ $(document).ready(function(){
     </div>
     <div class="col-2"></div>
     </div>`;
-
-    $(document).on("click","#carrello", function(){
-        $("#app").html(cart);
+    
+    $("#app").html(cart);
 
         //chiamata al carrello dell'utente - sessione
         $.ajax({
@@ -23,24 +52,26 @@ $(document).ready(function(){
                 <th>Nome</th><th>Prezzo</th><th></th>
                 </tr>`;
 
-                for(var i = 0; i < response.nome.length; i++){
-                    tabella += `<tr><td>` + response.nome[i] + `</td><td>` + response.prezzo[i] + `</td>
-                    <td>
-                    <button type="button" class="btn" id="cestino" data-nome="` + response.nome[i] + `"><img src="./img/icone/cestino.png" width="20"></button>
-                    </td></tr>`;
+                for (var i = 0; i < response.nome.length; i++) {
+
+                    if(response.nome[i] == ""){
+                        console.log("prodotto eliminato, non esiste");
+                    } else {
+                        tabella += `<tr><td>` + response.nome[i] + `</td><td>` + response.prezzo[i] + `</td><td>
+                        <button type="button" class="btn" id="cestino" data-nome="` + response.nome[i] + `"><img src="./img/icone/cestino.png" width="20"></button>
+                        </td></tr>`;
+                    }
+                    
                 }
 
-                tabella += "</table><h5>Totale </h5></div>";
+                tabella += "</table><h5>Totale " + response.totale + "</h5></div>";
                 $("#corpo").css("margin", "6rem 0rem");
                 $("#corpo").html(tabella);
-                
-                console.log(response);
+
+                console.log("risposta showCarrello() " + response);
             })
             .fail(function (xhr, resp, text) {
                 console.log(xhr, resp, text);
             });
 
-    });
-
-
-});
+};

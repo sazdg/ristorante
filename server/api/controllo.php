@@ -1,4 +1,5 @@
 <?php
+//controllo validità sessione utente
 session_start();
 
 if(isset($_SESSION["user"])){

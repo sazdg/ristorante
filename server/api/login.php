@@ -21,11 +21,13 @@ if($conta == 0){
 
     if($datilogin->password != $arrayrisultati["Password"]){
         echo json_encode("Password errata");
+        
     } else {
         session_start();
         $_SESSION["user"] = $datilogin->user;
         $_SESSION["carrello"] = array();
         $_SESSION["prezzo"] = array();
+        $_SESSION["totale"] = 0;
 
         echo json_encode("Benvenut* " . $_SESSION["user"]);
     }

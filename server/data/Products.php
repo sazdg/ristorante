@@ -46,9 +46,42 @@ class Products {
         $query = "SELECT * FROM prodotti WHERE id = :i";
 
         $risultato = $this->conn->prepare($query);
-
         $risultato->bindParam(":i", $i);
         $risultato->execute();
+
+        return $risultato;
+    }
+
+    public function delete($i){
+        $query = "DELETE FROM prodotti WHERE id = :i";
+
+        $risultato = $this->conn->prepare($query);
+        $risultato->bindParam(":i", $i);
+        $risultato->execute();
+
+        return $risultato;
+    }
+
+    public function aggiungere($pro, $pre, $c){
+        $query = "INSERT INTO prodotti SET Prodotti=:prod, Immagini=:imm, Prezzo=:pre, Categoria=:cat"; 
+        
+        $immagine = "default.jpg";
+        $pro = htmlspecialchars(strip_tags($pro));
+        $immagine = htmlspecialchars(strip_tags($immagine));
+        //$pre = htmlspecialchars(strip_tags($pre));
+        
+        $int_c = intval($c);
+        $int_pre = floatval($pre);
+
+        $risultato = $this->conn->prepare($query);
+
+        $risultato->bindParam(":prod", $pro);
+        $risultato->bindParam(":imm", $immagine);
+        $risultato->bindParam(":pre", $int_pre);
+        $risultato->bindParam(":cat", $int_c);
+
+        $risultato->execute();
+        
 
         return $risultato;
     }

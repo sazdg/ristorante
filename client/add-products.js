@@ -13,13 +13,15 @@ $(document).ready(function(){
             .done(function (response) {
                 if(response.esiste){
                     console.log("Prodotto " + response.messaggio + " aggiunto con successo al carrello");
+                    alert("Prodotto " + response.messaggio + " aggiunto con successo al carrello");
                 } else {
                     console.log("Non sei registrato!");
+                    alert("Effettua l'accesso per aggiungere il prodotto al carrello!");
                     showLogin();
                 }
             })
             .fail(function (xhr, resp, text) {
-                console.log("errore add-products.js" + xhr, resp, text)
+                console.log("errore add-products.js" + xhr, resp, text);
             });
         return false;
     });
