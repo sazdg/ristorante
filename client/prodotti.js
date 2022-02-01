@@ -28,7 +28,7 @@ function showProducts() {
                 stampa += `<div class="col p-3"><div class="card" style="width: 14rem;">
                 <img src="./img/prodotti/` + immagini + `" class="card-img-top" alt="">
                 <div class="card-body">
-                    <h5 class="card-title">` + nome + `</h5>
+                    <h5 class="card-title">` + nome + ` <br/><strong>` + prezzo + `&euro;</strong></h5>
                     <button type="button" class="btn btn-primary" id="add" data-id="` + id + `">Aggiungi al carrello</button></div>
                 </div></div>`;
             }

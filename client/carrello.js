@@ -57,14 +57,16 @@ function showCarrello(){
                     if(response.nome[i] == ""){
                         console.log("prodotto eliminato, non esiste");
                     } else {
-                        tabella += `<tr><td>` + response.nome[i] + `</td><td>` + response.prezzo[i] + `</td><td>
+                        tabella += `<tr><td>` + response.nome[i] + `</td><td>` + response.prezzo[i] + `&euro;</td><td>
                         <button type="button" class="btn" id="cestino" data-nome="` + response.nome[i] + `"><img src="./img/icone/cestino.png" width="20"></button>
                         </td></tr>`;
                     }
                     
                 }
 
-                tabella += "</table><h5>Totale " + response.totale + "</h5></div>";
+                tabella += `</table><h5>Totale ` + response.totale + `&euro;</h5>
+                <div class="p-5"><button type="button" class="btn btn-primary">Vai al pagamento</button></div>
+                </div>`;
                 $("#corpo").css("margin", "6rem 0rem");
                 $("#corpo").html(tabella);
 

@@ -13,7 +13,6 @@ $(document).ready(function () {
     <input type="submit" class="btn btn-primary" value="SUBMIT" id="send">
     </form>
     </div>
-    <div class="alert alert-danger" role="alert" id="avviso"></div>
     </div>`;
 
     //evento click bottone
@@ -39,12 +38,12 @@ $(document).ready(function () {
             data: datireg
         })
         .done(function(response){
-            console.log(response);
-            $("#avviso").text(response);
+            alert(response.messaggio);
+            showLogin();
         })
         .fail(function(xhr, resp, text){
             console.log(xhr, resp, text);
-            $("#avviso").text(text);
+            alert("Errore nella registrazione, riprova di nuova");
         });
         return false;
     });

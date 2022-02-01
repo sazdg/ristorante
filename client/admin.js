@@ -27,7 +27,7 @@ $(document).ready(function(){
         showForm();
     });
 
-    $(document).on("click","#newproduct", function(){
+    $(document).on("click", "#newproduct", function(){
 
         var pro = $("#nome").val();
         var pre = $("#prezzo").val();
@@ -106,11 +106,11 @@ function showForm(){
     var form = `<div class="container row m-0 p-5 mx-auto">
     <form class="p-5" id="addProduct">
     Nome prodotto:<br/>
-    <input type="text" class="form-control m-0" id="nome"><br/>
+    <input type="text" class="form-control m-0" id="nome" required><br/>
     Prezzo prodotto:<br/>
-    <input type="number" class="form-control m-0" id="prezzo"><br/>
+    <input type="number" class="form-control m-0" id="prezzo" required><br/>
     Selezionare categoria prodotto:<br/>
-    <select class="form-control" name="categoria" id="categoria">
+    <select class="form-control" name="categoria" id="categoria" required>
     <option value="1" selected>Primi</option>
     <option value="2">Secondi</option>
     <option value="3">Dessert</option>

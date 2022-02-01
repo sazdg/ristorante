@@ -36,9 +36,9 @@ function showLogin(){
     <div class="container-fluid row p-5 text-center">
     <form>
     <p>Username</p>
-    <input type="text" id="nome"><br/>
+    <input type="text" id="nome" required><br/>
     <p>Password</p>
-    <input type="password" id="psw"><br/><br/>
+    <input type="password" id="psw" required><br/><br/>
     <input type="submit" class="btn btn-primary" value="SUBMIT" id="invia">
     </form>
     </div>

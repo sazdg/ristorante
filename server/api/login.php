@@ -7,7 +7,9 @@ $db = $database->connessione();
 //metodo per ottenere le variabili di login (POST)
 $datilogin = json_decode(file_get_contents("php://input"));
 
-//TO DO sanificare i dati!!!!!!!!!!!!1
+//sanificare i dati
+$datilogin->user = htmlspecialchars(strip_tags($datilogin->user));
+$datilogin->password = htmlspecialchars(strip_tags($datilogin->password));
 
 //risultato query
 $rq = $db->query("SELECT * FROM utenti WHERE Nome = '" . $datilogin->user ."'");
