@@ -53,7 +53,8 @@ function controlSession(){
                 //TIPO UTENTE: CLIENTE
                 $("#username").html(response.username);
                 //ICONA LOGOUT
-                $("#login").removeAttr("onclick");
+                //$("#login").removeAttr("onclick");
+                $("#login").attr("onclick","alert(\"Hai effettuato il logout\");");
                 var logout = "<a href='../server/api/logout.php'><img src='./img/icone/exit.png' width='30' id='exit'></a>";
                 $("#login").html(logout);
 

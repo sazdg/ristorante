@@ -1,60 +1,52 @@
 <?php
-//DA RIFARE IL FILE
-//PER CAPIRE SE FUNZIONA DIVERSAMENTE
+
+if(isset($_POST["nome"])){
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $password = $_POST["psw"];
+
+    require("../data/Database.php");
+    $database = new Database();
+    $db = $database->connessione();
+
+    $cq = $db->query("SELECT * FROM utenti WHERE Nome = '$nome'");
+    $conta = $cq->rowCount();//0 o 1
 
 
-//if controllo required, if null if ""
-require("../data/Database.php");
-$database = new Database();
-$db = $database->connessione();
+    if($conta == 0){
+        //Utente ancora non registrato
+        //sanificazione dati
+        $nome = htmlspecialchars(strip_tags($nome));
+        $email = htmlspecialchars(strip_tags($email));
+        $password = htmlspecialchars(strip_tags($password));
 
-$datiregistrazione = json_decode(file_get_contents("php://input"));
-var_dump($datiregistrazione->nome);
+        //query registrazione
+        $iq = "INSERT INTO utenti (Nome, Password, Email) VALUES (:nome, :password, :email)";
+        $risultato = $db->prepare($iq);
+        $risultato->bindParam(":nome", $nome);
+        $risultato->bindParam(":password", $password);
+        $risultato->bindParam(":email", $email);
+
+        $risultato->execute();
+
+        if($risultato){
+
+            echo "<script type='text/javascript'>";
+            echo "alert('Iscrizione avvenuta con successo, effettua il tuo primo login');";
+            echo "window.location.assign('http://localhost/cime/ristorante/client/index.html');";
+            echo "</script>";
+            
+        } else {
+            echo "sorry bro";
+        }
 
 
-//sanificare i dati
-$datiregistrazione->nome = htmlspecialchars(strip_tags($datiregistrazione->nome));
-$datiregistrazione->password = htmlspecialchars(strip_tags($datiregistrazione->password));
-$datiregistrazione->email = htmlspecialchars(strip_tags($datiregistrazione->email));
-
-
-//CONTROLLO NOME UTENTE INESISTENTE
-//controllo query
-//$cq = $db->query("SELECT * FROM utenti WHERE Nome = '" . $datiregistrazione->nome . "'");
-//var_dump($cq);
-$cq = "SELECT Nome FROM utenti WHERE Nome = :nome";
-$result = $db->prepare($cq);
-$result->bindParam(":nome", $datiregistrazione->nome);
-$result->execute();
-var_dump($result);
-
-if($result == false){
-    //REGISTRAZIONE
-    //insert query
-    $iq = "INSERT INTO utenti (Nome, Password, Email) VALUES (:nome, :password, :email)";
-
-    $risultato = $db->prepare($iq);
-
-    $risultato->bindParam(":nome", $datiregistrazione->nome);
-    $risultato->bindParam(":password", $datiregistrazione->password);
-    $risultato->bindParam(":email", $datiregistrazione->email);
-
-    $risultato->execute();
-    echo $risultato->debugDumpParams();
-    var_dump($risultato);
-
-    if($risultato){
-        echo json_encode(array("messaggio" => "Registrazione avvenuta con successo, effettua il tuo primo login"));
     } else {
-        echo json_encode(array("messaggio" => "Qualcosa è andato storto, riprova"));
+        echo "<script type='text/javascript'>";
+        echo "alert('Attenzione!! Username già esistente');";
+        echo "window.location.assign('http://localhost/cime/ristorante/client/index.html');";
+        echo "</script>";
     }
-
-    
-} else {
-
-    echo json_encode(array("messaggio" => "Username gia' esistente"));
 }
-
-
 
 ?>

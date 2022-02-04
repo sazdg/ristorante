@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 
-    $(document).on("submit", function(){
+    $(document).on("click","#invia", function(){
 
         var dati = {
             user: $("#nome").val(),
