@@ -1,5 +1,6 @@
 <?php
 
+//controllo delle var già esistente nel form registrazione.js
 if(isset($_POST["nome"])){
     $nome = $_POST["nome"];
     $email = $_POST["email"];

@@ -7,6 +7,7 @@ $db = $database->connessione();
 require("../data/Products.php");
 $prodotto = new Products($db);
 
+//TODO CONTROLLO ISSET VARs
 $nome = $_GET["nome"];
 $prezzo = $_GET["prezzo"];
 $categoria = $_GET["categoria"];

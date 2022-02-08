@@ -12,6 +12,8 @@ $(document).ready(function(){
 
                 <!--funzione all'interno del bottone - attributo onclick-->
                 <button type="button" class="btn" id="menu" onclick="showProducts()"><img src="./img/icone/menu.png" width="35"></button>
+
+                <button type="button" class="btn" id="rec"><img src="./img/icone/rec.png" width="35"></button>
             </div>
 
             <div class="col-3 d-flex justify-content-end">

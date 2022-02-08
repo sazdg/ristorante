@@ -14,7 +14,8 @@ function showProducts() {
     })
         .done(function (response) {
 
-            var stampa = `<div class='container-fluid row m-0' id='body-cards'>
+            var stampa = `<h3 class="d-flex justify-content-center pt-5 m-0 ">Menu'</h3>
+            <div class='container-fluid row m-0' id='body-cards'>
             <div class='col-2 p-2'></div>
             <div class='container col-8 d-flex justify-content-around flex-wrap align-items-start p-5'>`;
 
