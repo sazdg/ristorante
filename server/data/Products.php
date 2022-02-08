@@ -34,6 +34,9 @@ class Products {
     }
 
     public function read(){
+        //prodotti.php
+        //card menu + tabella admin
+
         $query = "SELECT * FROM prodotti";
 
         $risultato = $this->conn->prepare($query);
@@ -43,6 +46,9 @@ class Products {
     }
 
     public function readOne($i){
+        //carrello.php 
+        //per inserire i dati completi del prodotto scelto
+        
         $query = "SELECT * FROM prodotti WHERE id = :i";
 
         $risultato = $this->conn->prepare($query);
@@ -53,6 +59,8 @@ class Products {
     }
 
     public function delete($i){
+        //elimina.php
+
         $query = "DELETE FROM prodotti WHERE id = :i";
 
         $risultato = $this->conn->prepare($query);
@@ -63,6 +71,8 @@ class Products {
     }
 
     public function aggiungere($pro, $pre, $c){
+        //aggiungi.php
+
         $query = "INSERT INTO prodotti SET Prodotti=:prod, Immagini=:imm, Prezzo=:pre, Categoria=:cat"; 
         
         $immagine = "default.jpg";

@@ -1,6 +1,6 @@
 $(document).ready(function(){
     
-    //aggiungere un prodotto
+    //AGGIUNGERE PRODOTTI AL CARRELLO USER
     $(document).on("click", "#add", function () {
 
         var item = $(this).attr("data-id");
@@ -11,6 +11,9 @@ $(document).ready(function(){
             dataType: "json"
         })
             .done(function (response) {
+                //CONTROLLO SESSIONE NEL PHP. UTENTE ESISTE = TRUE O FALSE
+
+
                 if(response.esiste){
                     console.log("Prodotto " + response.messaggio + " aggiunto con successo al carrello");
                     alert("Prodotto " + response.messaggio + " aggiunto con successo al carrello");

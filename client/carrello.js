@@ -30,6 +30,7 @@ $(document).ready(function(){
 
 function showCarrello(){
 
+    //DEFAULT NON CI SONO PRODOTTI
     var cart = `<div class="container-fluid row m-0">
     <div class="col-2"></div>
     <div class="col-8 text-center d-flex justify-content-center p-4" id="corpo">

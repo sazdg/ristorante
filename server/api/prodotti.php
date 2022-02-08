@@ -8,6 +8,8 @@ $db = $database->connessione();
 require("../data/Products.php");
 $prod = new Products($db);
 
+//METODO DELLA CLASSE PRODUCTS
+
 $risultato = $prod->read();
 $conta = $risultato->rowCount();
 

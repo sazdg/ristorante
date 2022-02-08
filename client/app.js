@@ -1,4 +1,3 @@
-//scaricare la risora, appena è pronta esegue le istruzioni
 $(document).ready(function(){
 
     var home = `<div>
@@ -45,5 +44,7 @@ $(document).ready(function(){
 
     //home
     $("#app").html(home);
+
+    //PAGINA RECENSIONI
 
 });

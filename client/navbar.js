@@ -2,6 +2,7 @@ $(document).ready(function(){
 
     controlSession();
 
+    //DEFAULT NAVBAR
     var nav = `<nav class="navbar navbar-dark bg-danger">
         <div class="container-fluid row p-2 m-0" id="titolo">
             <h3 class="col-3">Sublime Restaurant</h3>

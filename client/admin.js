@@ -1,9 +1,11 @@
 $(document).ready(function(){
 
+    //NAVBAR CLICK GESTIONE DB
     $(document).on("click", "#admin", function(){
         showAdmin();
     });
 
+    //ELIMINA PRODOTTO BOTTONE ROSSO
     $(document).on("click", "#elimina", function(){
         var idProdotto = $(this).attr("data-id");
         console.log(idProdotto);
@@ -23,10 +25,12 @@ $(document).ready(function(){
         });
     });
 
+    //CLICK BOTTONE AGGIUNGI PRODOTTO
     $(document).on("click", "#aggiungi", function(){
         showForm();
     });
 
+    //CHIAMATA AJAX AGGIUNGI PRODOTTO AL DB
     $(document).on("click", "#newproduct", function(){
 
         var pro = $("#nome").val();
@@ -55,6 +59,7 @@ $(document).ready(function(){
 });
 
 function showAdmin(){
+    //VISUALIZZARE LA TABELLA PRODOTTI
 
     $.ajax({
         url: "http://localhost/cime/ristorante/server/api/prodotti.php",
@@ -103,6 +108,8 @@ function showAdmin(){
 }
 
 function showForm(){
+    //FORM AGGIUNGI PRODOTTO AL DB
+
     var form = `<div class="container row m-0 p-5 mx-auto">
     <form class="p-5" id="addProduct">
     Nome prodotto:<br/>

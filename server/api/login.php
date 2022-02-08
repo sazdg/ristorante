@@ -21,6 +21,7 @@ if($conta == 0){
     //controllo risultati
     $arrayrisultati = $rq->fetch(PDO::FETCH_ASSOC);
 
+    //CONTROLLO PASSWORD CORRETTA
     if($datilogin->password != $arrayrisultati["Password"]){
         echo json_encode("Password errata");
         

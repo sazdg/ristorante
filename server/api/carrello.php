@@ -1,5 +1,5 @@
 <?php
-//DOPO AVER CLICCATO IL BOTTONE AGGIUNGI
+//DOPO AVER CLICCATO IL BOTTONE AGGIUNGI AL CARRELLO
 session_start();
 
 if(isset($_SESSION["user"])){
@@ -13,6 +13,7 @@ if(isset($_SESSION["user"])){
     require("../data/Products.php");
     $cibo = new Products($db);
     
+    //METODO DELL'OGGETTO CIBO (PRODUCTS)
     $scelta = $cibo->readOne($prodotto);
 
     if($ris = $scelta->rowCount() > 0){
