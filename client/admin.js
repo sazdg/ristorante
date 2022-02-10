@@ -44,9 +44,15 @@ $(document).ready(function(){
             dataType:"json"
         })
         .done(function(response){
-            console.log("funge -> " + response);
-            alert("Hai aggiunto il prodotto " + pro + " con successo");
-            showAdmin();
+            //true, inserito con successo
+            if(response.successo){
+                alert(response.message);
+                //reload
+                showAdmin();
+            } else {
+                alert(response.message);
+            }
+            
         })
         .fail(function(xhr, resp, text){
             console.log(xhr, resp, text);

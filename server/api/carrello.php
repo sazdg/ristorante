@@ -19,6 +19,7 @@ if(isset($_SESSION["user"])){
     if($ris = $scelta->rowCount() > 0){
 
         //FETCH DATA
+        //risultato 1 riga
         $riga = $scelta->fetch(PDO::FETCH_ASSOC);
         $nomeProdotto = $riga["Prodotti"];//nome
         $prezzoProdotto = $riga["Prezzo"];//prezzo
