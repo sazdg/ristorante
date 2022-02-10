@@ -1,9 +1,3 @@
-$(document).ready(function () {
-
-    //showProducts();
-
-});
-
 //visualizzare tutti i prodotti nella pagina prodotti
 function showProducts() {
 

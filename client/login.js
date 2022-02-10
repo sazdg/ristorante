@@ -33,6 +33,7 @@ $(document).ready(function(){
 function showLogin(){
 
     var log = `<div class="container row m-auto">
+    <h3 class="d-flex justify-content-center pt-5">Login</h3>
     <div class="container-fluid row p-5 text-center">
     <form>
     <p>Username</p>

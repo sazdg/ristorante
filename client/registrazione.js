@@ -3,6 +3,7 @@ $(document).ready(function(){
     $(document).on("click", "#reg", function(){
 
         var reg = `<div class="container row m-auto">
+        <h3 class="d-flex justify-content-center pt-5">Register</h3>
         <div class="container-fluid row p-5 text-center">
         <form method="post" action="../server/api/registrazione.php">
         <p>Username</p>

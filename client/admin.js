@@ -75,7 +75,10 @@ function showAdmin(){
         .done(function (response) {
 
             var admin = `
-            <div class="container row m-0 p-4 col-2 mx-auto"><button type="button" class="btn btn-primary" id="aggiungi"><img src="./img/icone/aggiungi.png" width="30"></button></div>
+            <h3 class="d-flex justify-content-center pt-5">Data management</h3>
+            <div class="container row m-0 p-4 col-2 mx-auto">
+            <button type="button" class="btn btn-primary" id="aggiungi"><img src="./img/icone/aggiungi.png" width="30"></button>
+            </div>
             
             <div class="container-fluid row m-0">
             <div class="col-2"></div>
@@ -117,6 +120,7 @@ function showForm(){
     //FORM AGGIUNGI PRODOTTO AL DB
 
     var form = `<div class="container row m-0 p-5 mx-auto">
+    <h3 class="d-flex justify-content-center p-4">Add new product</h3>
     <form class="p-5" id="addProduct">
     Nome prodotto:<br/>
     <input type="text" class="form-control m-0" id="nome" required><br/>
