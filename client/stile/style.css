@@ -64,3 +64,26 @@ input, .reg-stile {
 #alertcarrello {
     width: 50%;
 }
+
+@media only screen and (max-width: 600px) {
+    textarea {
+        max-width: 307px;
+    }
+}
+textarea {
+  max-width: 500px;
+  height: 100px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+#box-rece {
+    padding: 15px;
+    max-width: 540px;
+    background-color: #fffffff5;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    margin-bottom: 2rem;
+}

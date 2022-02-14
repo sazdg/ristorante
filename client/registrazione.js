@@ -2,7 +2,12 @@ $(document).ready(function(){
 
     $(document).on("click", "#reg", function(){
 
-        var reg = `<div class="container row m-auto">
+        showRegistrazione();
+    })
+})
+
+function showRegistrazione(){
+    var reg = `<div class="container row m-auto">
         <h3 class="d-flex justify-content-center pt-5">Register</h3>
         <div class="container-fluid row p-5 text-center">
         <form method="post" action="../server/api/registrazione.php">
@@ -12,6 +17,8 @@ $(document).ready(function(){
         <input type="text" id="email" name="email" required><br/>
         <p>Password</p>
         <input type="password" id="psw" name="psw" required><br/>
+        <p>Ripeti la password</p>
+        <input type="password" id="psw" name="psw2" required><br/>
         <input type="checkbox" class="form-check-input" value="terms" id="terms" required>Agree to terms and conditions<br/><br/>
         <input type="submit" class="btn btn-primary" value="SUBMIT" id="send">
         </form>
@@ -19,6 +26,5 @@ $(document).ready(function(){
         <p id="risposta"></p>
         </div>`;
 
-        $("#app").html(reg);
-    })
-})
+    $("#app").html(reg);
+}
