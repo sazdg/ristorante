@@ -21,11 +21,20 @@ if($conta == 0){
     //controllo risultati
     $arrayrisultati = $rq->fetch(PDO::FETCH_ASSOC);
 
+    //in registrazione.php
+    //hash a new password for storing in the database
+    //the function automatically generates a cryptographically safe salt
+    //$hashToStoreInDb = password_hash($datilogin->password, PASSWORD_DEFAULT);
+
+    //check if the hash of the entered login password, matches the stored hash
+    //the salt and the cost factor will be extracted from $existingHashFromDb or $arrayrisultati["Password"]
+    $isPasswordCorrect = password_verify($datilogin->password, $arrayrisultati["Password"]);
+
+
     //CONTROLLO PASSWORD CORRETTA
-    if($datilogin->password != $arrayrisultati["Password"]){
-        echo json_encode("Password errata");
-        
-    } else {
+    //if($datilogin->password != $arrayrisultati["Password"]){
+    if($isPasswordCorrect || $datilogin->password == $arrayrisultati["Password"]){
+        //next registration will be only hashed, I keep the password control for old password with no hash
         session_start();
         $_SESSION["user"] = $datilogin->user;
         $_SESSION["carrello"] = array();
@@ -33,6 +42,9 @@ if($conta == 0){
         $_SESSION["totale"] = 0;
 
         echo json_encode("Benvenut* " . $_SESSION["user"]);
+        
+    } else {
+        echo json_encode("Password errata");
     }
 
 }

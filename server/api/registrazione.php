@@ -24,11 +24,17 @@ if(isset($_POST["nome"])){
         $password_2 = htmlspecialchars(strip_tags($password_2));
 
         if($password == $password_2){
+
+            //hash a new password for storing in the database
+            //the function automatically generates a cryptographically safe salt
+            $hashToStoreInDb = password_hash($password, PASSWORD_DEFAULT);
+            var_dump($hashToStoreInDb);
+
             //query registrazione
             $iq = "INSERT INTO utenti (Nome, Password, Email) VALUES (:nome, :password, :email)";
             $risultato = $db->prepare($iq);
             $risultato->bindParam(":nome", $nome);
-            $risultato->bindParam(":password", $password);
+            $risultato->bindParam(":password", $hashToStoreInDb);
             $risultato->bindParam(":email", $email);
 
             $risultato->execute();
