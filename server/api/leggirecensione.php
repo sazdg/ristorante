@@ -1,5 +1,7 @@
 <?php
 
+//niente controllo sessione, pagina del sito a disposizione
+
 require("../data/Database.php");
 $database = new Database();
 $db = $database->connessione();

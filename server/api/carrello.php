@@ -46,6 +46,7 @@ if(isset($_SESSION["user"])){
 } else {
     //rimanda alla pagina di login
     echo json_encode(array("messaggio" => "Non sei registrato!", "esiste" => false));
+    echo "Fai il login prima";
 
 }
 

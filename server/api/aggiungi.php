@@ -1,30 +1,38 @@
 <?php
+session_start();
 
-require("../data/Database.php");
-$database = new Database();
-$db = $database->connessione();
+if(isset($_SESSION["user"])){
 
-require("../data/Products.php");
-$prodotto = new Products($db);
+    require("../data/Database.php");
+    $database = new Database();
+    $db = $database->connessione();
 
-    $nome = $_GET["nome"];
-    $prezzo = $_GET["prezzo"];
-    $categoria = $_GET["categoria"];
+    require("../data/Products.php");
+    $prodotto = new Products($db);
 
-//CONTROLLO CHE ESISTANO 
-if($nome != "" && $prezzo != ""){
+        $nome = $_GET["nome"];
+        $prezzo = $_GET["prezzo"];
+        $categoria = $_GET["categoria"];
 
-    $nome = htmlspecialchars(strip_tags($nome));
-    $prezzo = htmlspecialchars(strip_tags($prezzo));
-    $categoria = htmlspecialchars(strip_tags($categoria));
+    //CONTROLLO CHE ESISTANO 
+    if($nome != "" && $prezzo != ""){
 
-    $rq = $prodotto->aggiungere($nome, $prezzo, $categoria);
+        $nome = htmlspecialchars(strip_tags($nome));
+        $prezzo = htmlspecialchars(strip_tags($prezzo));
+        $categoria = htmlspecialchars(strip_tags($categoria));
 
-    echo json_encode(array("message" => "Hai aggiunto il prodotto $nome con successo al DB", "successo" => true));
+        $rq = $prodotto->aggiungere($nome, $prezzo, $categoria);
 
+        echo json_encode(array("message" => "Hai aggiunto il prodotto $nome con successo al DB", "successo" => true));
+
+    } else {
+
+        echo json_encode(array("message" => "Per favore completa tutti i campi", "successo" => false));
+    }
 } else {
-
-    echo json_encode(array("message" => "Per favore completa tutti i campi", "successo" => false));
+    echo "Fai il login";
 }
+
+
 
 ?>
