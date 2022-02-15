@@ -84,7 +84,13 @@ function showRece() {
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <p class="card-title">` + response[i].stelle + ` stelle</p>
+                            <p class="card-title">`;
+
+                            for(let j = 0; j < response[i].stelle; j++){
+                                respRece += `<img src="./img/icone/starfull.png" width="20">`;
+                            }
+                        
+                    respRece += `</p>
                     <p class="card-text">` + response[i].recensione + `</p>
                     <p class="card-text"><small class="text-muted">Reviewed ` + response[i].data + `</small></p>
                     </div>
