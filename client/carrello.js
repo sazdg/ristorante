@@ -33,11 +33,11 @@ function showCarrello(){
     //DEFAULT NON CI SONO PRODOTTI
     var cart = `<div class="container-fluid row m-0">
     <h3 class="d-flex justify-content-center pt-5">Shopping Cart</h3>
-    <div class="col-2"></div>
-    <div class="col-8 text-center d-flex justify-content-center p-4" id="corpo">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 col-12 text-center d-flex justify-content-center p-4" id="corpo">
         <div class="alert alert-danger" role="alert" id="alertcarrello">Non ci sono prodotti nel carrello!</div>
     </div>
-    <div class="col-2"></div>
+    <div class="col-sm-2"></div>
     </div>`;
     
     $("#app").html(cart);

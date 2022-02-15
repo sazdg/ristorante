@@ -4,8 +4,8 @@ $(document).ready(function(){
     $("#rec").on("click", function () {
 
         var rec = `<div class="container-fluid row">
-        <div class="col-4"></div>
-        <div class="col-4">
+        <div class="col-sm-4 col-1"></div>
+        <div class="col-sm-4 col-10">
             <h3 class="d-flex justify-content-center p-5">Client Reviews</h3>
 
             <h5>Leave a review for our webapp!</h5>
@@ -23,7 +23,7 @@ $(document).ready(function(){
 
             <div id="dbRece"></div>
         </div>
-        <div class="col-4"></div>
+        <div class="col-sm-4 col-1"></div>
         </div>`;
 
         $("#app").html(rec);
@@ -79,7 +79,7 @@ function showRece() {
                 respRece += `
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
-                        <div class="col-md-4 d-flex align-items-center justify-content-center">
+                        <div class="col-md-4 p-1 d-flex align-items-center justify-content-center">
                             <img src="./img/icone/persona.png" width="80" class="img-fluid rounded-start" alt="Utente">
                         </div>
                         <div class="col-md-8">

@@ -19,6 +19,7 @@ body {
 #footer {
     flex-shrink: 0;
 }
+/*fine footer in basso*/
 
 h3 {
     font-family: 'Sedgwick Ave', cursive;
@@ -57,6 +58,7 @@ input, .reg-stile {
     border-radius: .25rem;
 }
 
+/*carrello.js*/
 #corpo {
     margin: 15rem 0rem;
 }
@@ -65,10 +67,42 @@ input, .reg-stile {
     width: 50%;
 }
 
-@media only screen and (max-width: 600px) {
+/*iphone*/
+@media only screen and (max-width: 768px) {
     textarea {
         max-width: 307px;
     }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    #sfondo-footer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-fluid {
+        padding: 0;
+        margin: 0;
+    }
+
+    #alertcarrello {
+        width: 100%;
+    }
+
+    #corpo {
+    margin: 7rem 0rem;
+    }
+
+    input, #reg {
+        width: 100%;
+        padding: 5px 0;
+        margin: 1rem 0;
+    }
+
 }
 textarea {
   max-width: 500px;

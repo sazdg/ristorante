@@ -76,13 +76,13 @@ function showAdmin(){
 
             var admin = `
             <h3 class="d-flex justify-content-center pt-5">Data management</h3>
-            <div class="container row m-0 p-4 col-2 mx-auto">
+            <div class="container row m-0 p-4 col-sm-2 col-6 mx-auto">
             <button type="button" class="btn btn-primary" id="aggiungi"><img src="./img/icone/aggiungi.png" width="30"></button>
             </div>
             
             <div class="container-fluid row m-0">
-            <div class="col-2"></div>
-            <div class="col-8 text-center d-flex justify-content-center p-4" id="corpo-admin">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 col-12 text-center d-flex justify-content-center p-4" id="corpo-admin">
 
             <table class="table table-warning">
             <tr>
@@ -101,7 +101,7 @@ function showAdmin(){
             }
 
             admin += `</table></div>
-            <div class="col-2"></div>
+            <div class="col-sm-2"></div>
             </div>`;
 
             $("#app").html(admin);

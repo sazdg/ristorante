@@ -5,9 +5,9 @@ $(document).ready(function(){
     //DEFAULT NAVBAR
     var nav = `<nav class="navbar navbar-dark bg-danger">
         <div class="container-fluid row p-2 m-0" id="titolo">
-            <h3 class="col-3">Sublime Restaurant</h3>
+            <h3 class="col-3 col-md-2">Sublime Restaurant</h3>
 
-            <div class="col-6">
+            <div class="col-6 col-md-6">
                 <button type="button" class="btn" id="home"><a href="./index.html"><img src="./img/icone/home.png" width="30"></a></button>
 
                 <!--funzione all'interno del bottone - attributo onclick-->
@@ -16,7 +16,7 @@ $(document).ready(function(){
                 <button type="button" class="btn" id="rec"><img src="./img/icone/rec.png" width="35"></button>
             </div>
 
-            <div class="col-3 d-flex justify-content-end">
+            <div class="col-3 col-md-3 d-flex justify-content-end">
             <p class="d-flex align-items-center p-2 m-0" id="username"></p>
             <button type="button" class="btn" id="login" onclick="showLogin()"><img src="./img/icone/user.png" width="30" id="exit"></button>
             <button type="button" class="btn" id="carrello"><img src="./img/icone/carrello.png" width="30"></button>
