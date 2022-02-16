@@ -133,7 +133,7 @@ function showForm(){
     <option value="3">Dessert</option>
     <option value="4">Bevande</option>
     </select>
-    <input type="submit" class="btn btn-primary" value="Aggiungi prodotto" id="newproduct">
+    <input type="submit" class="btn btn-primary align-items" value="Aggiungi prodotto" id="newproduct">
     </form>
     </div>`;
 

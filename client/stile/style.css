@@ -21,13 +21,59 @@ body {
 }
 /*fine footer in basso*/
 
+nav {
+    border-radius: 20px;
+    margin: 10px;
+    padding: 0;
+    height: 6rem;
+
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    /*glassmorphism*/
+    backdrop-filter: blur( 1.5px );
+    -webkit-backdrop-filter: blur( 1.5px );
+
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+/* SHADOW */
+#alertcarrello, input, select, #comment, #box-rece, .card, #paga, #elimina, #aggiungi, .table-warning {
+    color:#000;
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    /*glassmorphism*/
+    backdrop-filter: blur( 1.5px );
+    -webkit-backdrop-filter: blur( 1.5px );
+
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+/*TITOLO SUBLIME RESTAURANT*/
 h3 {
     font-family: 'Sedgwick Ave', cursive;
-    font-size: 40px;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-primary, #inviaRece, #reg, #carouselExampleIndicators {
+    color: #fff;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    /*glassmorphism*/
+    backdrop-filter: blur( 1.5px );
+    -webkit-backdrop-filter: blur( 1.5px );
+
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+#inviaRece {
+    width: 100%;
+    margin: 15px 0;
 }
 
 #carouselExampleIndicators {
-    width: 100%;
+    width: 99%;
     margin: auto;
 }
 
@@ -44,6 +90,7 @@ h3 {
 #sfondo-footer {
     color: #f8b218;
     font-weight: bold;
+    border-radius: 20px 20px 0 0;
 }
 
 #titolo {
@@ -66,6 +113,7 @@ input, .reg-stile {
 #alertcarrello {
     width: 50%;
 }
+
 
 /*iphone*/
 @media only screen and (max-width: 768px) {
@@ -105,7 +153,6 @@ input, .reg-stile {
 
 }
 textarea {
-  max-width: 500px;
   height: 100px;
   border: 1px solid #ced4da;
   border-radius: 5px;
@@ -116,8 +163,4 @@ textarea {
 #box-rece {
     padding: 15px;
     max-width: 540px;
-    background-color: #fffffff5;
-    border-radius: 5px;
-    border: 1px solid #ced4da;
-    margin-bottom: 2rem;
 }

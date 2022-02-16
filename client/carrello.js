@@ -67,7 +67,7 @@ function showCarrello(){
                 }
 
                 tabella += `</table><h5>Totale ` + response.totale + `&euro;</h5>
-                <div class="p-5"><button type="button" class="btn btn-primary">Vai al pagamento</button></div>
+                <div class="p-5"><button type="button" class="btn btn-primary" id="paga">Vai al pagamento</button></div>
                 </div>`;
                 $("#corpo").css("margin", "6rem 0rem");
                 $("#corpo").html(tabella);
