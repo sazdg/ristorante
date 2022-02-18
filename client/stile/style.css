@@ -5,18 +5,26 @@ html, body {
 
 body {
   background-color: lightskyblue;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #app {
-  flex: 1 0 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 #footer {
-  flex-shrink: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 /*fine footer in basso*/
@@ -39,7 +47,8 @@ nav {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   color: #000;
 }
 
@@ -59,13 +68,14 @@ nav {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   color: #000;
 }
 
 /*TITOLO SUBLIME RESTAURANT*/
 h3 {
-  font-family: "Sedgwick Ave", cursive;
+  font-family: 'Sedgwick Ave', cursive;
   font-size: 30px;
   margin: 0;
   padding: 0;
@@ -86,7 +96,8 @@ h3 {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: #0077e8;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   color: #fff;
 }
 
@@ -105,7 +116,8 @@ h3 {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: #f8b218;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   color: #fff;
 }
 
@@ -141,10 +153,10 @@ h3 {
 
 input, .reg-stile {
   width: 30%;
-  padding: 0.375rem 0.75rem;
-  margin: 0.75rem;
+  padding: .375rem .75rem;
+  margin: .75rem;
   border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  border-radius: .25rem;
 }
 
 /*carrello.js*/
@@ -161,59 +173,61 @@ input, .reg-stile {
   textarea {
     max-width: 307px;
   }
-
   h3 {
     font-size: 20px;
   }
-
   #sfondo-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-
   .container-fluid {
     padding: 0;
     margin: 0;
   }
-
   #alertcarrello {
     width: 100%;
   }
-
   #corpo {
     margin: 7rem 0rem;
   }
-
   input, #reg {
     width: 100%;
     padding: 5px 0;
     margin: 1rem 0;
   }
-
   /*navbar*/
   .navbar {
     height: 80%;
   }
-
   .nav-icona img {
     width: 35px;
   }
-
   div#titolo h3 {
     font-size: 30px;
   }
-
   .barra {
     margin: 0;
     padding: 0;
   }
-
   #username {
     visibility: hidden;
   }
+  /*carosello*/
+  .img-car {
+    height: 300px;
+  }
 }
+
 #divisorio {
   font-size: 33px;
   font-weight: bold;
@@ -232,4 +246,5 @@ textarea {
 #box-rece {
   padding: 15px;
   max-width: 540px;
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */

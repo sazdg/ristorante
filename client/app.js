@@ -14,13 +14,13 @@ $(document).ready(function(){
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./img/food.png" class="d-block w-100" height="700" alt="">
+                    <img src="./img/food.png" class="d-block w-100 img-car" height="700" alt="">
                 </div>
                 <div class="carousel-item">
-                    <img src="./img/food2.jpg" class="d-block w-100" height="700" alt="">
+                    <img src="./img/food2.jpg" class="d-block w-100 img-car" height="700" alt="">
                 </div>
                 <div class="carousel-item">
-                    <img src="./img/food3.jpg" class="d-block w-100" height="700" alt="">
+                    <img src="./img/food3.jpg" class="d-block w-100 img-car" height="700" alt="">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
