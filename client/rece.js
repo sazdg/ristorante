@@ -8,7 +8,7 @@ $(document).ready(function(){
         <div class="col-sm-4 col-10">
             <h3 class="d-flex justify-content-center p-5">Client Reviews</h3>
 
-            <h5>Leave a review for our webapp!</h5>
+            <h5>Leave a review for our website!</h5>
             <div id="box-rece">
                 <form id="rece">
                     <laberl>Stars:<br />

@@ -5,26 +5,18 @@ html, body {
 
 body {
   background-color: lightskyblue;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 18px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 #app {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 #footer {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 /*fine footer in basso*/
@@ -44,16 +36,15 @@ nav {
   /*glassmorphism*/
   backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(1.5px);
-  border-radius: 10px;
+  border-radius: 0.25rem;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.3);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   color: #000;
 }
 
 /* SHADOW */
-#alertcarrello, input, select, #comment, #box-rece, .card, #paga, #elimina, #aggiungi, .table-warning, #carouselExampleIndicators {
+#alertcarrello, input, select, #comment, #box-rece, .card, #paga, #elimina, #aggiungi, .table-warning {
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
   -webkit-transform: translate3d(0, 0, 0);
@@ -65,17 +56,16 @@ nav {
   /*glassmorphism*/
   backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(1.5px);
-  border-radius: 10px;
+  border-radius: 0.25rem;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.3);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   color: #000;
 }
 
 /*TITOLO SUBLIME RESTAURANT*/
 h3 {
-  font-family: 'Sedgwick Ave', cursive;
+  font-family: "Sedgwick Ave", cursive;
   font-size: 30px;
   margin: 0;
   padding: 0;
@@ -93,11 +83,10 @@ h3 {
   /*glassmorphism*/
   backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(1.5px);
-  border-radius: 10px;
+  border-radius: 0.25rem;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: #0077e8;
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   color: #fff;
 }
 
@@ -113,22 +102,53 @@ h3 {
   /*glassmorphism*/
   backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(1.5px);
-  border-radius: 10px;
+  border-radius: 0.25rem;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: #f8b218;
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   color: #fff;
+}
+
+.btn-light {
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
+  /*glassmorphism*/
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #fff;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  color: #000;
+}
+
+/*rettangolini*/
+.specchietto {
+  margin: 2rem;
+  padding: 1rem;
+  text-align: center;
+  background: sfondo-grigio;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+}
+
+.img-specchietto {
+  display: flex;
+  width: 100%;
 }
 
 #inviaRece {
   width: 100%;
   margin: 15px 0;
-}
-
-#carouselExampleIndicators {
-  width: 99%;
-  margin: auto;
 }
 
 .badge {
@@ -143,7 +163,7 @@ h3 {
 
 #sfondo-footer {
   color: #f8b218;
-  font-weight: bold;
+  font-weight: 500;
   border-radius: 20px 20px 0 0;
 }
 
@@ -153,10 +173,10 @@ h3 {
 
 input, .reg-stile {
   width: 30%;
-  padding: .375rem .75rem;
-  margin: .75rem;
+  padding: 0.375rem 0.75rem;
+  margin: 0.75rem;
   border: 1px solid #ced4da;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 /*carrello.js*/
@@ -168,66 +188,108 @@ input, .reg-stile {
   width: 50%;
 }
 
-/*iphone*/
+a, a:hover, a:visited, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+#policy {
+  padding: 3rem 6rem;
+}
+
+ul {
+  text-decoration: underline;
+  list-style-type: none;
+  list-style-position: outside;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/*iphone SE*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  p#testo {
+    font-size: 18px !important;
+  }
+
+  /*carosello*/
+  .img-car {
+    height: 250px !important;
+  }
+
+  footer {
+    padding: 5%;
+    margin: 5%;
+    font-size: small;
+  }
+
+  h5 {
+    padding: 2%;
+    margin: 0;
+  }
+}
+/*iphone 12*/
 @media only screen and (max-width: 768px) {
   textarea {
     max-width: 307px;
   }
+
   h3 {
     font-size: 20px;
   }
+
   #sfondo-footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
   }
+
   .container-fluid {
     padding: 0;
     margin: 0;
   }
+
   #alertcarrello {
     width: 100%;
   }
+
   #corpo {
     margin: 7rem 0rem;
   }
+
   input, #reg {
     width: 100%;
     padding: 5px 0;
     margin: 1rem 0;
   }
+
   /*navbar*/
   .navbar {
     height: 80%;
   }
+
   .nav-icona img {
     width: 35px;
   }
+
   div#titolo h3 {
     font-size: 30px;
   }
+
   .barra {
     margin: 0;
     padding: 0;
   }
+
   #username {
     visibility: hidden;
   }
+
   /*carosello*/
   .img-car {
     height: 300px;
   }
 }
-
 #divisorio {
   font-size: 33px;
   font-weight: bold;
@@ -246,5 +308,4 @@ textarea {
 #box-rece {
   padding: 15px;
   max-width: 540px;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

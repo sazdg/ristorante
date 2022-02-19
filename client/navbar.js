@@ -5,7 +5,7 @@ $(document).ready(function(){
     //DEFAULT NAVBAR
     var nav = `<nav class="navbar navbar-dark bg-danger">
         <div class="container-fluid row m-0" id="titolo">
-            <h3 class="col-12 col-md-2 text-center p-2">Sublime Restaurant</h3>
+            <h3 class="col-12 col-md-2 text-center p-2"><a href="./index.html">Sublime Restaurant</a></h3>
 
             <div class="col-8 col-md-8 d-flex justify-content-center barra">
                 <button type="button" class="btn nav-icona" id="home"><a href="./index.html"><img src="./img/icone/home.png" width="30"></a></button>

@@ -14,7 +14,7 @@ $(document).ready(function(){
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./img/food.png" class="d-block w-100 img-car" height="700" alt="">
+                    <img src="./img/food.jpg" class="d-block w-100 img-car" height="700" alt="">
                 </div>
                 <div class="carousel-item">
                     <img src="./img/food2.jpg" class="d-block w-100 img-car" height="700" alt="">
@@ -35,11 +35,25 @@ $(document).ready(function(){
             </button>
         </div>
 
-    <div class="container-fluid row">
-    <div class="col-2"></div>
-    <p class="col-8 text-center pt-4 pb-4 fs-4">Sublime Restaurant is a cozy restaurant created by a husband and wife who wanted to build an eating establishment where everyone feels welcome and comfortable. Sublime Restaurant's website exhibits the restaurant's select food and drinks to give a glimpse at the distinguished, yet down - to - earth menu Sublime Restaurant serves its consumers.</p>
-    <div class="col-2"></div>
+    <div class="container-fluid row d-flex justify-content-center m-auto">
+    <p class="col-8 text-center pt-4 pb-4 fs-5" id="testo">Sublime Restaurant is a cozy restaurant created by a husband and wife who wanted to build an eating establishment where everyone feels welcome and comfortable. Sublime Restaurant's website exhibits the restaurant's select food and drinks to give a glimpse at the distinguished, yet down - to - earth menu Sublime Restaurant serves its consumers.</p>
     </div>
+
+    <div class="bg-warning p-3 text-center">
+    <p>The simple yet carefully created dishes are complimented by relaxed and attentive service in a comfortable, humble setting.</p>
+    <p>Rich culinary traditions, exotic products and flavoursome spices.</p>
+    <div class="text-center"><button type="button" class="btn btn-light" id="carrello">FOOD & DRINKS</button></div>
+    </div>
+    
+    <div class="container row d-flex flex-wrap justify-content-center m-auto">
+    <div class="col-sm-4 col-10 specchietto d-flex">
+    <strong><p>The ground-floor restaurant has exposed brick walls, traditional white-washed copper ceilings and weathered leather banquette seats.</p></strong>
+    <img src="./img/wall.jpg" alt="brick wall" class="img-specchietto"></div>
+    <div class="col-sm-4 col-10 specchietto d-flex">
+    <strong><p>A place to socialise over drinks and share plates of hearty, comforting food ad good music.</p></strong>
+    <img src="./img/drink.jpg" alt="drinks" class="img-specchietto"></div>
+    </div>
+
     </div>`;
 
     //home

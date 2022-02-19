@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
 $giallo: #f8b218;
+$danger: #dc3545;
 $sfondo-grigio: rgba( 255, 255, 255, 0.3 );
 $bordo-grigio: rgba( 255, 255, 255, 0.18 );
 
@@ -8,10 +9,10 @@ $bordo-grigio: rgba( 255, 255, 255, 0.18 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 @mixin bordi {
-    border-radius: 10px;
+    border-radius: 0.25rem;
     border: 1px solid $bordo-grigio;
 }
-@mixin glassmorphism($scelta, $testo) {
+@mixin glassmorphism($ombra, $testo) {
     -webkit-backface-visibility: hidden;
     -webkit-perspective: 1000;
     -webkit-transform: translate3d(0,0,0);
@@ -24,7 +25,7 @@ $bordo-grigio: rgba( 255, 255, 255, 0.18 );
     backdrop-filter: blur( 1.5px );
     -webkit-backdrop-filter: blur( 1.5px );
     @include bordi;
-    @include ombra($scelta);
+    @include ombra($ombra);
     color:$testo;
 }
 
@@ -57,7 +58,7 @@ nav {
     @include glassmorphism($sfondo-grigio, #000);
 }
 /* SHADOW */
-#alertcarrello, input, select, #comment, #box-rece, .card, #paga, #elimina, #aggiungi, .table-warning, #carouselExampleIndicators {
+#alertcarrello, input, select, #comment, #box-rece, .card, #paga, #elimina, #aggiungi, .table-warning {
     @include glassmorphism($sfondo-grigio, #000);
 }
 /*TITOLO SUBLIME RESTAURANT*/
@@ -74,16 +75,30 @@ h3 {
 #reg {
     @include glassmorphism($giallo, #fff)
 }
+.btn-light {
+    @include glassmorphism(#fff, #000);
+}
+
+/*rettangolini*/
+.specchietto {
+    margin: 2rem;
+    padding: 1rem;
+    text-align: center;
+    @include ombra(sfondo-grigio);
+    @include bordi;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-specchietto {
+    display: flex;
+    width: 100%;
+}
 
 
 #inviaRece {
     width: 100%;
     margin: 15px 0;
-}
-
-#carouselExampleIndicators {
-    width: 99%;
-    margin: auto;
 }
 
 .badge {
@@ -98,7 +113,7 @@ h3 {
 
 #sfondo-footer {
     color: $giallo;
-    font-weight: bold;
+    font-weight: 500;
     border-radius: 20px 20px 0 0;
 }
 
@@ -123,8 +138,47 @@ input, .reg-stile {
     width: 50%;
 }
 
+a, a:hover, a:visited, a:active {
+    text-decoration: none;
+    color: inherit;
+}
 
-/*iphone*/
+#policy {
+    padding: 3rem 6rem;
+}
+
+ul {
+    text-decoration: underline;
+    list-style-type: none;
+    list-style-position: outside;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/*iphone SE*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    p#testo {
+        font-size: 18px !important;
+    }
+    /*carosello*/
+    .img-car {
+        height: 250px !important;
+    }
+
+    footer {
+        padding: 5%;
+        margin: 5%;
+        font-size: small;
+    }
+    
+    h5 {
+        padding: 2%;
+        margin: 0;
+    }
+
+}
+
+/*iphone 12*/
 @media only screen and (max-width: 768px) {
     textarea {
         max-width: 307px;
@@ -183,6 +237,7 @@ input, .reg-stile {
         height: 300px;
     }
 }
+
 
 #divisorio {
     font-size: 33px;
