@@ -42,7 +42,7 @@ $(document).ready(function(){
     <div class="bg-warning p-3 text-center">
     <p>The simple yet carefully created dishes are complimented by relaxed and attentive service in a comfortable, humble setting.</p>
     <p>Rich culinary traditions, exotic products and flavoursome spices.</p>
-    <div class="text-center"><button type="button" class="btn btn-light" id="carrello">FOOD & DRINKS</button></div>
+    <div class="text-center"><button type="button" class="btn btn-light" onclick="showProducts()">FOOD & DRINKS</button></div>
     </div>
     
     <div class="container row d-flex flex-wrap justify-content-center m-auto">

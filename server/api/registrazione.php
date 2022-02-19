@@ -28,7 +28,6 @@ if(isset($_POST["nome"])){
             //hash a new password for storing in the database
             //the function automatically generates a cryptographically safe salt
             $hashToStoreInDb = password_hash($password, PASSWORD_DEFAULT);
-            var_dump($hashToStoreInDb);
 
             //query registrazione
             $iq = "INSERT INTO utenti (Nome, Password, Email) VALUES (:nome, :password, :email)";
