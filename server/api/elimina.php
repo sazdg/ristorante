@@ -1,5 +1,6 @@
 <?php
 //CANCELLARE UN PRODOTTO DAL DB
+session_start();
 if(isset($_SESSION["user"])){
     require("../data/Database.php");
     $database = new Database();
